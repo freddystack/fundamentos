@@ -1,0 +1,16 @@
+<h3 class="text-center">Imagesnes optenidas desde una api</h3>
+
+<div class="container animate__animated animate__fadeInLeft  animate__faster	500ms">
+  
+    <div class="row">
+        <div class="card m-1" style="width: 12rem;" *ngFor="let i of listJobs">
+            <div class="card-title text-center">
+                 {{i.company}}
+            </div>
+            <img [src]="i.image" >
+            <div class="card-body text-center">
+              <p class="card-text">{{ i.jobPosition }}</p>
+            </div>
+          </div>
+    </div>
+</div>

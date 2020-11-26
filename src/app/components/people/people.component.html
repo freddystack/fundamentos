@@ -1,0 +1,28 @@
+<div class="container animate__animated animate__fadeInLeft  animate__faster	500ms">
+  <h3 class="text-center">Datos de personas optenidos desde una api</h3>
+    <div class="row">
+    
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Contry</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of listPeoples | paginate: { itemsPerPage: 5, currentPage: p } ; let in = index ">
+                  <td>{{ i.name }}</td>
+                  <td>{{ i.country }}</td>
+                  <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" (click)="details(i.id)" >View</button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+
+
